@@ -2,17 +2,18 @@
 // APP CONFIGURATION
 // ------------------------------------------------------------------
 
-module.exports = {
+const config = {
     logging: true,
- 
+
     intentMap: {
-       'AMAZON.StopIntent': 'END',
+        'AMAZON.StopIntent': 'END',
     },
- 
+
     db: {
-         FileDb: {
-             pathToFile: '../db/db.json',
-         }
-     },
- };
- 
+        FileDb: {
+            pathToFile: './../../db/db.json',
+        },
+    },
+};
+
+export = config;

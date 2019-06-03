@@ -33,7 +33,6 @@ bower_components
 build/Release
 
 # Dependency directories
-node_modules/
 jspm_packages/
 
 # TypeScript v1 declaration files
@@ -61,7 +60,9 @@ typings/
 .next
 
 # Added by Hadi, for Jovo
+dist/
+node_modules/
 db/
 bundle/
 bundle.zip
-
+.env
