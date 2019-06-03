@@ -2,7 +2,32 @@
 	"interactionModel": {
 		"languageModel": {
 			"invocationName": "planty compare",
-			"types": [],
+			"types": [
+				{
+					"name": "PLANTY_Currency",
+					"values": [
+						{
+							"id": null,
+							"name": {
+								"value": "EUR",
+								"synonyms": [
+									"Euro",
+									"Euros"
+								]
+							}
+						},
+						{
+							"id": null,
+							"name": {
+								"value": "USD",
+								"synonyms": [
+									"US dollars"
+								]
+							}
+						}
+					]
+				}
+			],
 			"intents": [
 				{
 					"name": "HelloWorldIntent",
@@ -24,6 +49,37 @@
 						{
 							"name": "name",
 							"type": "AMAZON.US_FIRST_NAME"
+						}
+					]
+				},
+				{
+					"name": "EquivalentIncomeEstimateIntent",
+					"samples": [
+						"How much should you make in {targetCity} to maintain the same lifestyle",
+						"How much should I make in {targetCity} to maintain the same lifestyle",
+						"How much should you make in {targetCity} to maintain the same lifestyle as making {baseIncomeAmount} {currency} in {baseCity}",
+						"How much do I need to make in {targetCity} to maintain a comparable lifestyle as making {baseIncomeAmount} {currency} in {baseCity}",
+						"How much should I earn in {targetCity} to maintain a similar lifestyle as making {baseIncomeAmount} {currency} in {baseCity}",
+						"How much should I make in {targetCity} to maintain the same lifestyle as making {baseIncomeAmount} {currency} in {baseCity}",
+						"How much should one make in {targetCity} to maintain the same lifestyle as making {baseIncomeAmount} {currency} in {baseCity}",
+						"How much should one make in {targetCity} to maintain the same lifestyle"
+					],
+					"slots": [
+						{
+							"name": "targetCity",
+							"type": "AMAZON.City"
+						},
+						{
+							"name": "baseIncomeAmount",
+							"type": "AMAZON.NUMBER"
+						},
+						{
+							"name": "baseCity",
+							"type": "AMAZON.City"
+						},
+						{
+							"name": "currency",
+							"type": "PLANTY_Currency"
 						}
 					]
 				},

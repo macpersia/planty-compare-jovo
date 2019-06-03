@@ -1,0 +1,35 @@
+{
+	"name": "EquivalentIncomeEstimateIntent",
+	"auto": true,
+	"webhookUsed": true,
+	"responses": [
+		{
+			"parameters": [
+				{
+					"isList": false,
+					"name": "targetCity",
+					"value": "$targetCity",
+					"dataType": "@sys.geo-city"
+				},
+				{
+					"isList": false,
+					"name": "baseIncomeAmount",
+					"value": "$baseIncomeAmount",
+					"dataType": "@sys.cardinal"
+				},
+				{
+					"isList": false,
+					"name": "baseCity",
+					"value": "$baseCity",
+					"dataType": "@sys.geo-city"
+				},
+				{
+					"isList": false,
+					"name": "currency",
+					"value": "$currency",
+					"dataType": "@PLANTY_Currency"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,292 @@
+[
+	{
+		"data": [
+			{
+				"text": "How much should you make in ",
+				"userDefined": false
+			},
+			{
+				"text": "targetCity",
+				"userDefined": true,
+				"alias": "targetCity",
+				"meta": "@sys.geo-city"
+			},
+			{
+				"text": " to maintain the same lifestyle",
+				"userDefined": false
+			}
+		],
+		"isTemplate": false,
+		"count": 0
+	},
+	{
+		"data": [
+			{
+				"text": "How much should I make in ",
+				"userDefined": false
+			},
+			{
+				"text": "targetCity",
+				"userDefined": true,
+				"alias": "targetCity",
+				"meta": "@sys.geo-city"
+			},
+			{
+				"text": " to maintain the same lifestyle",
+				"userDefined": false
+			}
+		],
+		"isTemplate": false,
+		"count": 0
+	},
+	{
+		"data": [
+			{
+				"text": "How much should you make in ",
+				"userDefined": false
+			},
+			{
+				"text": "targetCity",
+				"userDefined": true,
+				"alias": "targetCity",
+				"meta": "@sys.geo-city"
+			},
+			{
+				"text": " to maintain the same lifestyle as making ",
+				"userDefined": false
+			},
+			{
+				"text": "baseIncomeAmount",
+				"userDefined": true,
+				"alias": "baseIncomeAmount",
+				"meta": "@sys.cardinal"
+			},
+			{
+				"text": " ",
+				"userDefined": false
+			},
+			{
+				"text": "currency",
+				"userDefined": true,
+				"alias": "currency",
+				"meta": "@PLANTY_Currency"
+			},
+			{
+				"text": " in ",
+				"userDefined": false
+			},
+			{
+				"text": "baseCity",
+				"userDefined": true,
+				"alias": "baseCity",
+				"meta": "@sys.geo-city"
+			}
+		],
+		"isTemplate": false,
+		"count": 0
+	},
+	{
+		"data": [
+			{
+				"text": "How much do I need to make in ",
+				"userDefined": false
+			},
+			{
+				"text": "targetCity",
+				"userDefined": true,
+				"alias": "targetCity",
+				"meta": "@sys.geo-city"
+			},
+			{
+				"text": " to maintain a comparable lifestyle as making ",
+				"userDefined": false
+			},
+			{
+				"text": "baseIncomeAmount",
+				"userDefined": true,
+				"alias": "baseIncomeAmount",
+				"meta": "@sys.cardinal"
+			},
+			{
+				"text": " ",
+				"userDefined": false
+			},
+			{
+				"text": "currency",
+				"userDefined": true,
+				"alias": "currency",
+				"meta": "@PLANTY_Currency"
+			},
+			{
+				"text": " in ",
+				"userDefined": false
+			},
+			{
+				"text": "baseCity",
+				"userDefined": true,
+				"alias": "baseCity",
+				"meta": "@sys.geo-city"
+			}
+		],
+		"isTemplate": false,
+		"count": 0
+	},
+	{
+		"data": [
+			{
+				"text": "How much should I earn in ",
+				"userDefined": false
+			},
+			{
+				"text": "targetCity",
+				"userDefined": true,
+				"alias": "targetCity",
+				"meta": "@sys.geo-city"
+			},
+			{
+				"text": " to maintain a similar lifestyle as making ",
+				"userDefined": false
+			},
+			{
+				"text": "baseIncomeAmount",
+				"userDefined": true,
+				"alias": "baseIncomeAmount",
+				"meta": "@sys.cardinal"
+			},
+			{
+				"text": " ",
+				"userDefined": false
+			},
+			{
+				"text": "currency",
+				"userDefined": true,
+				"alias": "currency",
+				"meta": "@PLANTY_Currency"
+			},
+			{
+				"text": " in ",
+				"userDefined": false
+			},
+			{
+				"text": "baseCity",
+				"userDefined": true,
+				"alias": "baseCity",
+				"meta": "@sys.geo-city"
+			}
+		],
+		"isTemplate": false,
+		"count": 0
+	},
+	{
+		"data": [
+			{
+				"text": "How much should I make in ",
+				"userDefined": false
+			},
+			{
+				"text": "targetCity",
+				"userDefined": true,
+				"alias": "targetCity",
+				"meta": "@sys.geo-city"
+			},
+			{
+				"text": " to maintain the same lifestyle as making ",
+				"userDefined": false
+			},
+			{
+				"text": "baseIncomeAmount",
+				"userDefined": true,
+				"alias": "baseIncomeAmount",
+				"meta": "@sys.cardinal"
+			},
+			{
+				"text": " ",
+				"userDefined": false
+			},
+			{
+				"text": "currency",
+				"userDefined": true,
+				"alias": "currency",
+				"meta": "@PLANTY_Currency"
+			},
+			{
+				"text": " in ",
+				"userDefined": false
+			},
+			{
+				"text": "baseCity",
+				"userDefined": true,
+				"alias": "baseCity",
+				"meta": "@sys.geo-city"
+			}
+		],
+		"isTemplate": false,
+		"count": 0
+	},
+	{
+		"data": [
+			{
+				"text": "How much should one make in ",
+				"userDefined": false
+			},
+			{
+				"text": "targetCity",
+				"userDefined": true,
+				"alias": "targetCity",
+				"meta": "@sys.geo-city"
+			},
+			{
+				"text": " to maintain the same lifestyle as making ",
+				"userDefined": false
+			},
+			{
+				"text": "baseIncomeAmount",
+				"userDefined": true,
+				"alias": "baseIncomeAmount",
+				"meta": "@sys.cardinal"
+			},
+			{
+				"text": " ",
+				"userDefined": false
+			},
+			{
+				"text": "currency",
+				"userDefined": true,
+				"alias": "currency",
+				"meta": "@PLANTY_Currency"
+			},
+			{
+				"text": " in ",
+				"userDefined": false
+			},
+			{
+				"text": "baseCity",
+				"userDefined": true,
+				"alias": "baseCity",
+				"meta": "@sys.geo-city"
+			}
+		],
+		"isTemplate": false,
+		"count": 0
+	},
+	{
+		"data": [
+			{
+				"text": "How much should one make in ",
+				"userDefined": false
+			},
+			{
+				"text": "targetCity",
+				"userDefined": true,
+				"alias": "targetCity",
+				"meta": "@sys.geo-city"
+			},
+			{
+				"text": " to maintain the same lifestyle",
+				"userDefined": false
+			}
+		],
+		"isTemplate": false,
+		"count": 0
+	}
+]

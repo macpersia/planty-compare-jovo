@@ -26,6 +26,88 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "EquivalentIncomeEstimateIntent",
+			"phrases": [
+				"How much should you make in {targetCity} to maintain the same lifestyle",
+				"How much should I make in {targetCity} to maintain the same lifestyle",
+				"How much should you make in {targetCity} to maintain the same lifestyle as making {baseIncomeAmount} {currency} in {baseCity}",
+				"How much do I need to make in {targetCity} to maintain a comparable lifestyle as making {baseIncomeAmount} {currency} in {baseCity}",
+				"How much should I earn in {targetCity} to maintain a similar lifestyle as making {baseIncomeAmount} {currency} in {baseCity}",
+				"How much should I make in {targetCity} to maintain the same lifestyle as making {baseIncomeAmount} {currency} in {baseCity}",
+				"How much should one make in {targetCity} to maintain the same lifestyle as making {baseIncomeAmount} {currency} in {baseCity}",
+				"How much should one make in {targetCity} to maintain the same lifestyle"
+			],
+			"inputs": [
+				{
+					"name": "targetCity",
+					"type": {
+						"alexa": "AMAZON.City",
+						"dialogflow": "@sys.geo-city"
+					},
+					"samples": [
+						"It's {targetCity}",
+						"{targetCity}"
+					]
+				},
+				{
+					"name": "baseIncomeAmount",
+					"type": {
+						"alexa": "AMAZON.NUMBER",
+						"dialogflow": "@sys.cardinal"
+					},
+					"samples": [
+						"It's {baseIncomeAmount} {currency}",
+						"Let's say {baseIncomeAmount} {currency}",
+						"{baseIncomeAmount} {currency}"
+					]
+				},
+				{
+					"name": "baseCity",
+					"type": {
+						"alexa": "AMAZON.City",
+						"dialogflow": "@sys.geo-city"
+					},
+					"samples": [
+						"Let's say {baseCity}",
+						"It's {baseCity}",
+						"{baseCity}"
+					]
+				},
+				{
+					"name": "currency",
+					"_type": {
+						"alexa": "PLANTY_Currency",
+						"dialogflow": "@sys.currency-name"
+					},
+					"type": "PLANTY_Currency",
+					"samples": [
+						"It's {currency}",
+						"{currency}"
+					]
+				}
+			]
+		}
+	],
+	"inputTypes": [
+		{
+			"name": "PLANTY_Currency",
+			"values": [
+				{
+					"value": "EUR",
+					"synonyms": [
+						"Euro",
+						"Euros"
+					]
+				},
+				{
+					"value": "USD",
+					"synonyms": [
+						"US dollars"
+					]
+				}
+			]
 		}
 	],
 	"alexa": {

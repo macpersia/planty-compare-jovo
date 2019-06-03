@@ -1,0 +1,17 @@
+[
+	{
+		"value": "EUR",
+		"synonyms": [
+			"EUR",
+			"Euro",
+			"Euros"
+		]
+	},
+	{
+		"value": "USD",
+		"synonyms": [
+			"USD",
+			"US dollars"
+		]
+	}
+]
