@@ -60,9 +60,12 @@ typings/
 .next
 
 # Added by Hadi, for Jovo
+plantycompare-gc-serviceaccount-key.json
 dist/
 node_modules/
 db/
 bundle/
 bundle.zip
 .env
+
+platforms/googleAction/dialogflow_agent.zip
