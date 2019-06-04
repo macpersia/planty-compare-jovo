@@ -3,6 +3,7 @@ import {Alexa} from 'jovo-platform-alexa';
 import {JovoDebugger} from 'jovo-plugin-debugger';
 import {FileDb} from 'jovo-db-filedb';
 import {GoogleAssistant} from 'jovo-platform-googleassistant';
+import { handleEquivalentIncomeEstimate } from './equivalent-income-estimate';
 
 // ------------------------------------------------------------------
 // APP INITIALIZATION
@@ -23,17 +24,17 @@ app.use(
 // ------------------------------------------------------------------
 
 app.setHandler({
-    LAUNCH() {
-        return this.toIntent('HelloWorldIntent');
-    },
 
-    HelloWorldIntent() {
-        this.ask('Hello World! What\'s your name?', 'Please tell me your name.');
-    },
+    "LAUNCH": (jovo) => jovo!.toIntent('HelloWorldIntent'),
+    
+    "HelloWorldIntent": (jovo) => jovo!.ask(
+        'Hello World! What\'s your name?', 
+        'Please tell me your name.'),
 
-    MyNameIsIntent() {
-        this.tell('Hey ' + this.$inputs.name.value + ', nice to meet you!');
-    },
+    "MyNameIsIntent": (jovo) => jovo!.tell(
+        `Hey ${jovo!.$inputs.name.value}, nice to meet you!`),
+
+    "EquivalentIncomeEstimateIntent": (jovo) => handleEquivalentIncomeEstimate(jovo!)
 });
 
 export {app};
