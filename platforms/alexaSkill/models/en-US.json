@@ -96,6 +96,116 @@
 					"samples": []
 				}
 			]
+		},
+		"prompts": [
+			{
+				"id": "Elicit.Slot.1034777316399.1507183316783",
+				"variations": [
+					{
+						"type": "PlainText",
+						"value": "You're looking for the income in which city?"
+					},
+					{
+						"type": "PlainText",
+						"value": "You're asking for the income in which city?"
+					},
+					{
+						"type": "PlainText",
+						"value": "What's the name of the target city?"
+					}
+				]
+			},
+			{
+				"id": "Elicit.Slot.1034777316399.367530226949",
+				"variations": [
+					{
+						"type": "PlainText",
+						"value": "What's the income you wanna use as the basis for the comparison?"
+					},
+					{
+						"type": "PlainText",
+						"value": "What's the income you wanna use for the comparison? For example, you may say 3800 US dollars."
+					},
+					{
+						"type": "PlainText",
+						"value": "How much is the income you wanna use for the comparison? For example, you may say 3200 US dollars."
+					}
+				]
+			},
+			{
+				"id": "Elicit.Slot.1034777316399.1202432172714",
+				"variations": [
+					{
+						"type": "PlainText",
+						"value": "Which currency we're using?"
+					},
+					{
+						"type": "PlainText",
+						"value": "The base income is in which currency?"
+					}
+				]
+			},
+			{
+				"id": "Elicit.Slot.1034777316399.798490554861",
+				"variations": [
+					{
+						"type": "PlainText",
+						"value": "Which city you wanna use as the basis for comparing costs?"
+					},
+					{
+						"type": "PlainText",
+						"value": "Where do you live? I mean which city"
+					}
+				]
+			}
+		],
+		"dialog": {
+			"intents": [
+				{
+					"name": "EquivalentIncomeEstimate",
+					"confirmationRequired": false,
+					"prompts": {},
+					"slots": [
+						{
+							"name": "targetCity",
+							"type": "AMAZON.City",
+							"confirmationRequired": false,
+							"elicitationRequired": true,
+							"prompts": {
+								"elicitation": "Elicit.Slot.1034777316399.1507183316783"
+							}
+						},
+						{
+							"name": "baseIncomeAmount",
+							"type": "AMAZON.NUMBER",
+							"confirmationRequired": false,
+							"elicitationRequired": true,
+							"prompts": {
+								"elicitation": "Elicit.Slot.1034777316399.367530226949"
+							}
+						},
+						{
+							"name": "baseCity",
+							"type": "AMAZON.City",
+							"confirmationRequired": false,
+							"elicitationRequired": true,
+							"prompts": {
+								"elicitation": "Elicit.Slot.1034777316399.798490554861"
+							}
+						},
+						{
+							"name": "currency",
+							"type": "PLANTY_Currency",
+							"confirmationRequired": false,
+							"elicitationRequired": true,
+							"prompts": {
+								"elicitation": "Elicit.Slot.1034777316399.1202432172714"
+							}
+						}
+					]
+				}
+			],
+			"delegationStrategy": "ALWAYS"
 		}
 	}
 }
