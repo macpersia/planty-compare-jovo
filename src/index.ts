@@ -1,4 +1,4 @@
-import {ExpressJS, Lambda, Webhook} from 'jovo-framework';
+import {ExpressJS, Webhook, /* Lambda, */GoogleCloudFunction} from 'jovo-framework';
 import {app} from './app';
 
 // ------------------------------------------------------------------
@@ -19,7 +19,14 @@ if (process.argv.indexOf('--webhook') > -1) {
     });
 }
 
+/* 
 // AWS Lambda
 export const handler = async (event: any, context: any, callback: Function) => {
     await app.handle(new Lambda(event, context, callback));
+};
+*/
+
+// Google Cloud Function
+export const handler = async (req: any, res: any) => {
+    await app.handle(new GoogleCloudFunction(req, res));
 };

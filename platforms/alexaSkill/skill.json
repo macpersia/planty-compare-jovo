@@ -26,7 +26,7 @@
 			"custom": {
 				"endpoint": {
 					"sslCertificateType": "Wildcard",
-					"uri": "https://webhook.jovo.cloud/8fb3b6f7-4ee9-444f-95a0-6758b0334459"
+					"uri": "https://us-central1-plantycompare.cloudfunctions.net/fulfillment"
 				}
 			}
 		},

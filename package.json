@@ -2,18 +2,24 @@
   "name": "planty-compare-jovo",
   "version": "0.0.1",
   "description": "Planty Compare voice app that works with the Jovo Framework",
-  "main": "./dist/src/index.js",
-  "types": "./dist/src/index.d.ts",
+  "_main": "./dist/src/index.js",
+  "_types": "./dist/src/index.d.ts",
+  "main": "./index.js",
+  "types": "./index.d.ts",
   "dependencies": {
     "jovo-db-filedb": "^2.0.2",
     "jovo-framework": "^2.2.6",
     "jovo-platform-alexa": "^2.0.2",
     "jovo-platform-googleassistant": "^2.0.2",
-    "jovo-plugin-debugger": "^2.0.2"
+    "jovo-plugin-debugger": "^2.0.2",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
   },
   "devDependencies": {
     "@types/express": "^4.16.1",
     "@types/jest": "^23.3.5",
+    "@types/request": "^2.48.1",
+    "@types/request-promise": "^4.1.44",
     "@types/socket.io-client": "^1.4.32",
     "ask-cli": "^1.7.2",
     "gulp": "^4.0.0",

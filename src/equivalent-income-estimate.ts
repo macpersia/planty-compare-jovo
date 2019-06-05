@@ -1,4 +1,5 @@
-import { Jovo, JovoRequest } from "jovo-core";
+import {Jovo, JovoRequest} from "jovo-core";
+import requestPromise = require('request-promise');
 
 const HELP_MESSAGE = 
     "You can ask, how much would you need to make in a given city to maintain a comparable lifestyle,"
@@ -20,29 +21,34 @@ export const handleEquivalentIncomeEstimate = async (jovo: Jovo) => {
         `You'd need to earn ${incomeAmount} ${targetCurrency}s, to maintain a comparable lifestyle.`);
 }
 
-const getEquivalentIncome = (request: JovoRequest): Promise<number> => {
-    var requestInputs = request.getInputs();
-    var targetCity = requestInputs["targetCity"].value;
+const getEquivalentIncome = async (request: JovoRequest): Promise<number> => {
+    const requestInputs = request.getInputs();
+    const targetCity = requestInputs["targetCity"].value;
     
-    // var targetCurrency = requestInputs["targetCurrency"].value;
-    var targetCurrency = requestInputs["currency"].value;
-
-    var baseCity = requestInputs["baseCity"].value;
-    // var baseIncomeFields = requestInputs["baseIncome"].value;
-    // var baseIncomeAmount = parseInt(baseIncomeFields["amount"].value, 10);
-    // var baseCurrency = baseIncomeFields["currency"].value;
-    var baseIncomeAmount = parseInt(requestInputs["baseIncomeAmount"].value, 10);    
-    var baseCurrency = requestInputs["currency"].value;
+    const baseCity = requestInputs["baseCity"].value;
+    // const baseIncomeFields = requestInputs["baseIncome"].value;
+    // const baseIncomeAmount = parseInt(baseIncomeFields["amount"].value, 10);
+    // const baseCurrency = baseIncomeFields["currency"].value;
+    const baseIncomeAmount = parseInt(requestInputs["baseIncomeAmount"].value, 10);    
+    const baseCurrency = requestInputs["currency"].value;
 
     // TODO: Parameterize targetCurrency too
-    var targetCurrency = baseCurrency;
+    const targetCurrency = baseCurrency;
+    // const targetCurrency = requestInputs["targetCurrency"].value;
 
-    // var response = await client.GetAsync(
-    //     // "http://localhost:5000/api/equivalent-income?"
-    //     "http://pc.planty-ideas.net:8080/api/equivalent-income?"
-    //     + $"targetCity={targetCity}&targetCurrency={targetCurrency}"
-    //     + $"&baseCity={baseCity}&baseIncomeAmount={baseIncomeAmount}&baseCurrency={baseCurrency}");
+    const estimateUrl = 
+        // "http://localhost:8081/api/equivalent-income?"
+        `http://pc.planty-ideas.net:8080/api/equivalent-income?`
+        + `targetCity=${targetCity}&targetCurrency=${targetCurrency}`
+        + `&baseCity=${baseCity}&baseIncomeAmount=${baseIncomeAmount}&baseCurrency=${baseCurrency}`;
+    const response = await requestPromise({
+        uri: estimateUrl,
+        method: 'GET'
+    }, (err, res, body) => {
+        if (err)
+            console.error('>>>> inside get equivalent income request.get', err);
+    });
 
-    var incomeAmount = NaN; //Decimal.Parse(await response.Content.ReadAsStringAsync());
-    return new Promise(resolve => Math.round(incomeAmount / 100) * 100);
+    const incomeAmount = parseFloat(response);
+    return Math.round(incomeAmount / 100) * 100;
 }
