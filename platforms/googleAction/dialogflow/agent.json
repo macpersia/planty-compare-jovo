@@ -1,0 +1,49 @@
+{
+	"description": "",
+	"webhook": {
+		"url": "https://us-central1-plantycompare.cloudfunctions.net/fulfillment",
+		"_url.jovo": "https://webhook.jovo.cloud/8fb3b6f7-4ee9-444f-95a0-6758b0334459",
+		"_url.azure": "https://planty-compare-functionapp.azurewebsites.net/api/PlantyCompareHttpTrigger?code=YTGRH6zYvR8739rcGLr6qPpu0NT6NbYQ3i0ta3kn1LNoHnPqNcrmhw==",
+		"headers": {
+			"": ""
+		},
+		"available": true,
+		"useForDomains": false,
+		"cloudFunctionsEnabled": false,
+		"cloudFunctionsInitialized": false
+	},
+	"language": "en",
+	"disableInteractionLogs": false,
+	"disableStackdriverLogs": true,
+	"googleAssistant": {
+		"googleAssistantCompatible": true,
+		"project": "plantycompare",
+		"welcomeIntentSignInRequired": false,
+		"startIntents": [
+			{
+				"intentId": "ff9980a3-999f-40c0-932e-cc3a1484d50d",
+				"signInRequired": false
+			}
+		],
+		"systemIntents": [],
+		"endIntentIds": [],
+		"oAuthLinking": {
+			"required": false,
+			"grantType": "AUTH_CODE_GRANT"
+		},
+		"voiceType": "MALE_1",
+		"capabilities": [],
+		"protocolVersion": "V2",
+		"autoPreviewEnabled": true,
+		"isDeviceAgent": false
+	},
+	"defaultTimezone": "Asia/Hong_Kong",
+	"isPrivate": true,
+	"customClassifierMode": "use.after",
+	"mlMinConfidence": 0.3,
+	"onePlatformApiVersion": "v2",
+	"analyzeQueryTextSentiment": false,
+	"enabledKnowledgeBaseNames": [],
+	"knowledgeServiceConfidenceAdjustment": -0.4,
+	"dialogBuilderMode": false
+}

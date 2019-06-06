@@ -1,0 +1,123 @@
+{
+	"id": "ff9980a3-999f-40c0-932e-cc3a1484d50d",
+	"name": "EquivalentIncomeEstimateIntent",
+	"auto": true,
+	"contexts": [],
+	"responses": [
+		{
+			"resetContexts": false,
+			"affectedContexts": [],
+			"parameters": [
+				{
+					"id": "1cdf9f49-5a5b-44c4-a22a-3c9f9a03141f",
+					"required": true,
+					"dataType": "@sys.geo-city",
+					"name": "targetCity",
+					"value": "$targetCity",
+					"prompts": [
+						{
+							"lang": "en",
+							"value": "What's the name of the target city?"
+						},
+						{
+							"lang": "en",
+							"value": "You're asking for the income in which city?"
+						},
+						{
+							"lang": "en",
+							"value": "You're looking for the income in which city?"
+						}
+					],
+					"isList": false
+				},
+				{
+					"id": "c9023fda-bc5d-4c85-a49f-d254628ff8c3",
+					"required": true,
+					"dataType": "@sys.geo-city",
+					"name": "baseCity",
+					"value": "$baseCity",
+					"prompts": [
+						{
+							"lang": "en",
+							"value": "Where do you live? I mean which city"
+						},
+						{
+							"lang": "en",
+							"value": "Which city you wanna use as the basis for comparing costs?"
+						}
+					],
+					"isList": false
+				},
+				{
+					"id": "0c820b91-0d59-44d1-9b20-6a706c722c1e",
+					"required": true,
+					"dataType": "@sys.unit-currency",
+					"name": "baseIncome",
+					"value": "$baseIncome",
+					"prompts": [
+						{
+							"lang": "en",
+							"value": "What's the income you wanna use for the comparison? For example, you may say 3800 US dollars."
+						},
+						{
+							"lang": "en",
+							"value": "How much is the income you wanna use for the comparison? For example, you may say 3200 US dollars."
+						}
+					],
+					"isList": false
+				},
+				{
+					"required": true,
+					"dataType": "@sys.cardinal",
+					"name": "baseIncomeAmount",
+					"value": "$baseIncomeAmount",
+					"prompts": [
+						{
+							"lang": "en",
+							"value": "What's the income you wanna use as the basis for the comparison?"
+						},
+						{
+							"lang": "en",
+							"value": "What's the income you wanna use for the comparison? For example, you may say 3800 US dollars."
+						},
+						{
+							"lang": "en",
+							"value": "How much is the income you wanna use for the comparison? For example, you may say 3200 US dollars."
+						}
+					],
+					"isList": false
+				},
+				{
+					"required": true,
+					"dataType": "@sys.currency-name",
+					"name": "currency",
+					"value": "$currency",
+					"prompts": [
+						{
+							"lang": "en",
+							"value": "Which currency we're using?"
+						},
+						{
+							"lang": "en",
+							"value": "The base income is in which currency?"
+						}
+					],
+					"isList": false
+				}
+			],
+			"messages": [
+				{
+					"type": 0,
+					"lang": "en",
+					"speech": []
+				}
+			],
+			"defaultResponsePlatforms": {},
+			"speech": []
+		}
+	],
+	"priority": 500000,
+	"webhookUsed": true,
+	"webhookForSlotFilling": false,
+	"fallbackIntent": false
+}

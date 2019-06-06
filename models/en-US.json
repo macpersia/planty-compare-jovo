@@ -1,0 +1,386 @@
+{
+	"invocation": "planty compare",
+	"intents": [
+		{
+			"name": "HelloWorldIntent",
+			"phrases": [
+				"hello",
+				"say hello",
+				"say hello world"
+			]
+		},
+		{
+			"name": "MyNameIsIntent",
+			"phrases": [
+				"{name}",
+				"my name is {name}",
+				"i am {name}",
+				"you can call me {name}"
+			],
+			"inputs": [
+				{
+					"name": "name",
+					"type": {
+						"alexa": "AMAZON.US_FIRST_NAME",
+						"dialogflow": "@sys.given-name"
+					}
+				}
+			]
+		},
+		{
+			"name": "EquivalentIncomeEstimateIntent",
+			"phrases": [
+				"How much should you make in {targetCity} to maintain the same lifestyle",
+				"How much should I make in {targetCity} to maintain the same lifestyle",
+				"How much should you make in {targetCity} to maintain the same lifestyle as making {baseIncomeAmount} {currency} in {baseCity}",
+				"How much do I need to make in {targetCity} to maintain a comparable lifestyle as making {baseIncomeAmount} {currency} in {baseCity}",
+				"How much should I earn in {targetCity} to maintain a similar lifestyle as making {baseIncomeAmount} {currency} in {baseCity}",
+				"How much should I make in {targetCity} to maintain the same lifestyle as making {baseIncomeAmount} {currency} in {baseCity}",
+				"How much should one make in {targetCity} to maintain the same lifestyle as making {baseIncomeAmount} {currency} in {baseCity}",
+				"How much should one make in {targetCity} to maintain the same lifestyle"
+			],
+			"inputs": [
+				{
+					"name": "targetCity",
+					"type": {
+						"alexa": "AMAZON.City",
+						"dialogflow": "@sys.geo-city"
+					},
+					"samples": [
+						"It's {targetCity}",
+						"{targetCity}"
+					]
+				},
+				{
+					"name": "baseIncomeAmount",
+					"type": {
+						"alexa": "AMAZON.NUMBER",
+						"dialogflow": "@sys.cardinal"
+					},
+					"samples": [
+						"It's {baseIncomeAmount} {currency}",
+						"Let's say {baseIncomeAmount} {currency}",
+						"{baseIncomeAmount} {currency}"
+					]
+				},
+				{
+					"name": "baseCity",
+					"type": {
+						"alexa": "AMAZON.City",
+						"dialogflow": "@sys.geo-city"
+					},
+					"samples": [
+						"Let's say {baseCity}",
+						"It's {baseCity}",
+						"{baseCity}"
+					]
+				},
+				{
+					"name": "currency",
+					"_type": {
+						"alexa": "PLANTY_Currency",
+						"dialogflow": "@sys.currency-name"
+					},
+					"type": "PLANTY_Currency",
+					"samples": [
+						"It's {currency}",
+						"{currency}"
+					]
+				}
+			]
+		}
+	],
+	"inputTypes": [
+		{
+			"name": "PLANTY_Currency",
+			"values": [
+				{
+					"value": "EUR",
+					"synonyms": [
+						"Euro",
+						"Euros"
+					]
+				},
+				{
+					"value": "USD",
+					"synonyms": [
+						"US dollars"
+					]
+				}
+			]
+		}
+	],
+	"alexa": {
+		"interactionModel": {
+			"languageModel": {
+				"intents": [
+					{
+						"name": "AMAZON.CancelIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.HelpIntent",
+						"samples": []
+					},
+					{
+						"name": "AMAZON.StopIntent",
+						"samples": []
+					}
+				]
+			},
+			"dialog": {
+				"intents": [
+					{
+						"name": "EquivalentIncomeEstimate",
+						"confirmationRequired": false,
+						"prompts": {},
+						"slots": [
+							{
+								"name": "targetCity",
+								"type": "AMAZON.City",
+								"confirmationRequired": false,
+								"elicitationRequired": true,
+								"prompts": {
+									"elicitation": "Elicit.Slot.1034777316399.1507183316783"
+								}
+							},
+							{
+								"name": "baseIncomeAmount",
+								"type": "AMAZON.NUMBER",
+								"confirmationRequired": false,
+								"elicitationRequired": true,
+								"prompts": {
+									"elicitation": "Elicit.Slot.1034777316399.367530226949"
+								}
+							},
+							{
+								"name": "baseCity",
+								"type": "AMAZON.City",
+								"confirmationRequired": false,
+								"elicitationRequired": true,
+								"prompts": {
+									"elicitation": "Elicit.Slot.1034777316399.798490554861"
+								}
+							},
+							{
+								"name": "currency",
+								"type": "PLANTY_Currency",
+								"confirmationRequired": false,
+								"elicitationRequired": true,
+								"prompts": {
+									"elicitation": "Elicit.Slot.1034777316399.1202432172714"
+								}
+							}
+						]
+					}
+				],
+				"delegationStrategy": "ALWAYS"
+			},
+			"prompts": [
+				{
+					"id": "Elicit.Slot.1034777316399.1507183316783",
+					"variations": [
+						{
+							"type": "PlainText",
+							"value": "You're looking for the income in which city?"
+						},
+						{
+							"type": "PlainText",
+							"value": "You're asking for the income in which city?"
+						},
+						{
+							"type": "PlainText",
+							"value": "What's the name of the target city?"
+						}
+					]
+				},
+				{
+					"id": "Elicit.Slot.1034777316399.367530226949",
+					"variations": [
+						{
+							"type": "PlainText",
+							"value": "What's the income you wanna use as the basis for the comparison?"
+						},
+						{
+							"type": "PlainText",
+							"value": "What's the income you wanna use for the comparison? For example, you may say 3800 US dollars."
+						},
+						{
+							"type": "PlainText",
+							"value": "How much is the income you wanna use for the comparison? For example, you may say 3200 US dollars."
+						}
+					]
+				},
+				{
+					"id": "Elicit.Slot.1034777316399.1202432172714",
+					"variations": [
+						{
+							"type": "PlainText",
+							"value": "Which currency we're using?"
+						},
+						{
+							"type": "PlainText",
+							"value": "The base income is in which currency?"
+						}
+					]
+				},
+				{
+					"id": "Elicit.Slot.1034777316399.798490554861",
+					"variations": [
+						{
+							"type": "PlainText",
+							"value": "Which city you wanna use as the basis for comparing costs?"
+						},
+						{
+							"type": "PlainText",
+							"value": "Where do you live? I mean which city"
+						}
+					]
+				}
+			]
+		}
+	},
+	"dialogflow": {
+		"intents": [
+			{
+				"name": "Default Fallback Intent",
+				"auto": true,
+				"webhookUsed": true,
+				"fallbackIntent": true
+			},
+			{
+				"name": "Default Welcome Intent",
+				"auto": true,
+				"webhookUsed": true,
+				"events": [
+					{
+						"name": "WELCOME"
+					}
+				]
+			},
+			{
+				"id": "ff9980a3-999f-40c0-932e-cc3a1484d50d",
+				"name": "EquivalentIncomeEstimateIntent",
+				"auto": true,
+				"contexts": [],
+				"responses": [
+					{
+						"resetContexts": false,
+						"affectedContexts": [],
+						"parameters": [
+							{
+								"id": "1cdf9f49-5a5b-44c4-a22a-3c9f9a03141f",
+								"required": true,
+								"dataType": "@sys.geo-city",
+								"name": "targetCity",
+								"value": "$targetCity",
+								"prompts": [
+									{
+										"lang": "en",
+										"value": "What's the name of the target city?"
+									},
+									{
+										"lang": "en",
+										"value": "You're asking for the income in which city?"
+									},
+									{
+										"lang": "en",
+										"value": "You're looking for the income in which city?"
+									}
+								],
+								"isList": false
+							},
+							{
+								"id": "c9023fda-bc5d-4c85-a49f-d254628ff8c3",
+								"required": true,
+								"dataType": "@sys.geo-city",
+								"name": "baseCity",
+								"value": "$baseCity",
+								"prompts": [
+									{
+										"lang": "en",
+										"value": "Where do you live? I mean which city"
+									},
+									{
+										"lang": "en",
+										"value": "Which city you wanna use as the basis for comparing costs?"
+									}
+								],
+								"isList": false
+							},
+							{
+								"id": "0c820b91-0d59-44d1-9b20-6a706c722c1e",
+								"required": true,
+								"dataType": "@sys.unit-currency",
+								"name": "baseIncome",
+								"value": "$baseIncome",
+								"prompts": [
+									{
+										"lang": "en",
+										"value": "What's the income you wanna use for the comparison? For example, you may say 3800 US dollars."
+									},
+									{
+										"lang": "en",
+										"value": "How much is the income you wanna use for the comparison? For example, you may say 3200 US dollars."
+									}
+								],
+								"isList": false
+							},
+							{
+								"required": true,
+								"dataType": "@sys.cardinal",
+								"name": "baseIncomeAmount",
+								"value": "$baseIncomeAmount",
+								"prompts": [
+									{
+										"lang": "en",
+										"value": "What's the income you wanna use as the basis for the comparison?"
+									},
+									{
+										"lang": "en",
+										"value": "What's the income you wanna use for the comparison? For example, you may say 3800 US dollars."
+									},
+									{
+										"lang": "en",
+										"value": "How much is the income you wanna use for the comparison? For example, you may say 3200 US dollars."
+									}
+								],
+								"isList": false
+							},
+							{
+								"required": true,
+								"dataType": "@sys.currency-name",
+								"name": "currency",
+								"value": "$currency",
+								"prompts": [
+									{
+										"lang": "en",
+										"value": "Which currency we're using?"
+									},
+									{
+										"lang": "en",
+										"value": "The base income is in which currency?"
+									}
+								],
+								"isList": false
+							}
+						],
+						"messages": [
+							{
+								"type": 0,
+								"lang": "en",
+								"speech": []
+							}
+						],
+						"defaultResponsePlatforms": {},
+						"speech": []
+					}
+				],
+				"priority": 500000,
+				"webhookUsed": true,
+				"webhookForSlotFilling": false,
+				"fallbackIntent": false
+			}
+		]
+	}
+}
