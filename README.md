@@ -20,3 +20,4 @@ $ jovo new <directory>
 $ jovo new <directory> --template helloworld
 ```
 
+...
